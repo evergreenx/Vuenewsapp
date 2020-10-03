@@ -34,7 +34,7 @@
          {{article.description}}
 
 <v-spacer></v-spacer>
-           <v-btn small replace color="info" v-bind:href="article.url" target="_blank" >Read More</v-btn>
+           <v-btn small replace color="red" v-bind:href="article.url" target="_blank" >Read More</v-btn>
 
           </v-card-text>
 
