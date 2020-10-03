@@ -1,65 +1,41 @@
 <template>
-  
-  
-  <v-app
-    height="400"
-  >
-    <v-app-bar
-      color="deep-purple"
-      dark
-    >
-      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+  <v-app>
+    <v-app-bar fixed dark app clipped-left class="elevation-2 red">
+     <v-app-bar-nav-icon @click="drawer =!drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Title</v-toolbar-title>
+      <!-- <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon> -->
+      <v-toolbar-title class="white--text">News App</v-toolbar-title>
     </v-app-bar>
 
-<MainContent/>
-    <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-    >
-      <v-list
-        nav
-        dense
-      >
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item>
+    <SideNav :drawer="drawer" :group="group" />
 
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Account</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
+    <v-container fluid>
+      <v-main>
+        <MainContent />
+      </v-main>
+    
+    </v-container>
   </v-app>
+  
 </template>
-
 
 <script>
 import MainContent from "./components/MainContent";
+import SideNav from "./components/SideNav";
 
 export default {
   name: "App",
 
   components: {
-   MainContent
+    MainContent,
+    SideNav,
   },
 
   data: () => ({
-    
+    drawer: true,
+    group: null,
+
     //
-  })
+  }),
 };
 </script>
