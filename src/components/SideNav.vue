@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" fixed app clipped absolute
+    <v-navigation-drawer v-model="drawer" fixed app clipped 
       >
       <v-list nav dense class="pt-3">
         <v-list-item-group
