@@ -7,7 +7,7 @@
       <v-toolbar-title class="white--text">News App</v-toolbar-title>
     </v-app-bar>
 
-    <SideNav :drawer="drawer" :group="group" />
+    <SideNav :drawer="drawer" :group="group" :apikey="apikey" />
 
     <v-container fluid>
       <v-main>
@@ -34,6 +34,7 @@ export default {
     drawer: true,
     group: null,
     article: [],
+    apikey:'5ebdd2c815384793a582b2071f9a746c'
 
     //
   }),
@@ -47,9 +48,13 @@ export default {
       )
       .then((res) => {
         this.article = res.data.articles;
-       
+
         console.log(res);
-      });
+      })
+      .catch(err=>{
+        alert(err)
+      })
+      ;
   },
 };
 </script>
