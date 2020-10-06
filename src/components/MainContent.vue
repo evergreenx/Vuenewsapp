@@ -1,5 +1,8 @@
 <template>
-  <div>
+<div>
+
+ 
+  <div  v-if="this.articles">
     <v-card
       hover
       class="mx-auto mt-4"
@@ -14,7 +17,7 @@
       </v-card-title>
 
       <v-card-subtitle>
-        {{ article.author }}
+        {{ article.source.name }}
       </v-card-subtitle>
 
       <v-card-subtitle>
@@ -50,6 +53,23 @@
         
       </v-expand-transition>
     </v-card>
+
+  </div>
+   <div v-else>
+
+   
+  <v-sheet
+    :color="grey"
+    class="pa-3"
+  >
+    <v-skeleton-loader
+      class="mx-auto"
+      max-width="300"
+      type="card"
+    ></v-skeleton-loader>
+  </v-sheet>
+
+  </div>
   </div>
 </template>
 

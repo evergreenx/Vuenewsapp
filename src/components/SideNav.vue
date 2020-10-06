@@ -5,20 +5,37 @@
         <v-list-item-group
           v-model="group"
           active-class="deep-purple--text text--accent-4"
+          v-for="source in sources" :key="source.id"
         >
-          <v-list-item v-for="source in sources" :key="source.id">
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>{{source.name}}</v-list-item-title>
-          </v-list-item>
+          
+          <v-tooltip bottom>
 
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Account</v-list-item-title>
+<template v-slot:activator="{on , attrs}">
+          <v-list-item 
+          @click="selectSource(source.id)"
+v-bind="attrs"
+v-on="on"
+          
+          
+          >
+
+
+            <v-avatar>
+              <img :src="imageUrl(source.id)" class="mb-2 img circle elevation-7" />
+              <!-- <v-icon>mdi-home</v-icon> -->
+            </v-avatar>
+            <v-list-item-title>{{ source.name }}</v-list-item-title>
+
+
+        
+
           </v-list-item>
+</template>
+
+<span> {{source.name}}</span>
+</v-tooltip>
+
+
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -32,18 +49,18 @@ export default {
   created() {
     axios
       .get(
-        "https://newsapi.org/v2/sources?apiKey=" +
+        "https://newsapi.org/v2/sources?language=en&apiKey=" +
           "5ebdd2c815384793a582b2071f9a746c"
       )
       .then((res) => {
         console.log(res);
-        this.sources = res.data.sources
+        this.sources = res.data.sources;
       });
   },
   data() {
     return {
       draw: this.drawer,
-      sources:[]
+      sources: [],
     };
   },
   props: {
@@ -51,7 +68,15 @@ export default {
     group: null,
     apikey: String,
   },
-  methods: {},
+  methods: {
+    imageUrl(pic) {
+      return require("../assets/images/" + pic + ".png");
+    },
+    selectSource(source){
+      this.$emit('selectSource' , source)
+      
+    }
+  },
 };
 </script>
 

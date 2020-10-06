@@ -7,7 +7,12 @@
       <v-toolbar-title class="white--text">News App</v-toolbar-title>
     </v-app-bar>
 
-    <SideNav :drawer="drawer" :group="group" :apikey="apikey" />
+    <SideNav
+      :drawer="drawer"
+      :group="group"
+      :apikey="apikey"
+      @selectSource="setNewsResource"
+    />
 
     <v-container fluid>
       <v-main>
@@ -34,7 +39,7 @@ export default {
     drawer: true,
     group: null,
     article: [],
-    apikey:'5ebdd2c815384793a582b2071f9a746c'
+    apikey: "5ebdd2c815384793a582b2071f9a746c",
 
     //
   }),
@@ -42,8 +47,8 @@ export default {
   created() {
     axios
       .get(
-        "http://newsapi.org/v2/top-headlines?" +
-          "sources=bbc-news&" +
+        "http://newsapi.org/v2/everything?" +
+          "sources=bbc-news&" +"pageSize=70&"+
           "apiKey=5ebdd2c815384793a582b2071f9a746c"
       )
       .then((res) => {
@@ -51,10 +56,25 @@ export default {
 
         console.log(res);
       })
-      .catch(err=>{
-        alert(err)
-      })
-      ;
+      .catch((err) => {
+        alert(err);
+      });
+  },
+
+  methods: {
+    setNewsResource(source) {
+      axios
+        .get(
+          "http://newsapi.org/v2/top-headlines?" +
+            "sources=" +
+            source +
+            "&apiKey=5ebdd2c815384793a582b2071f9a746c"
+        )
+        .then((res) => {
+          this.article = res.data.articles;
+          console.log(res);
+        });
+    },
   },
 };
 </script>
