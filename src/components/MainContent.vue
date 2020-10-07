@@ -21,12 +21,12 @@
       </v-card-subtitle>
 
       <v-card-subtitle>
-        {{convertdate}}
+    
       </v-card-subtitle>
 
 <div>
           <v-divider></v-divider>
-
+<br/>
           <v-card-text>
             {{ article.description }}
             <v-btn

@@ -3,7 +3,7 @@
     <v-navigation-drawer v-model="drawer" fixed app clipped>
       <v-list nav dense class="pt-3">
         <v-list-item-group
-          v-model="group"
+          
           active-class="deep-purple--text text--accent-4"
           v-for="source in sources" :key="source.id"
         >
@@ -53,7 +53,7 @@ export default {
           "5ebdd2c815384793a582b2071f9a746c"
       )
       .then((res) => {
-        console.log(res);
+      
         this.sources = res.data.sources;
       });
   },
@@ -65,7 +65,7 @@ export default {
   },
   props: {
     drawer: Boolean,
-    group: null,
+   
     apikey: String,
   },
   methods: {

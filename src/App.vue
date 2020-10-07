@@ -9,7 +9,6 @@
 
     <SideNav
       :drawer="drawer"
-      :group="group"
       :apikey="apikey"
       @selectSource="setNewsResource"
     />
@@ -37,7 +36,7 @@ export default {
 
   data: () => ({
     drawer: true,
-    group: null,
+
     article: [],
     apikey: "5ebdd2c815384793a582b2071f9a746c",
 
@@ -48,16 +47,12 @@ export default {
     axios
       .get(
         "http://newsapi.org/v2/everything?" +
-          "sources=bbc-news&" +"pageSize=70&"+
+          "sources=bbc-news&" +
+          "pageSize=70&" +
           "apiKey=5ebdd2c815384793a582b2071f9a746c"
       )
       .then((res) => {
         this.article = res.data.articles;
-
-        console.log(res);
-      })
-      .catch((err) => {
-        alert(err);
       });
   },
 
@@ -72,7 +67,6 @@ export default {
         )
         .then((res) => {
           this.article = res.data.articles;
-          console.log(res);
         });
     },
   },
