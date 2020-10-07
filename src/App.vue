@@ -46,7 +46,7 @@ export default {
   created() {
     axios
       .get(
-        "http://newsapi.org/v2/everything?" +
+        "https://newsapi.org/v2/everything?" +
           "sources=bbc-news&" +
           "pageSize=70&" +
           "apiKey=5ebdd2c815384793a582b2071f9a746c"
@@ -60,7 +60,7 @@ export default {
     setNewsResource(source) {
       axios
         .get(
-          "http://newsapi.org/v2/top-headlines?" +
+          "https://newsapi.org/v2/top-headlines?" +
             "sources=" +
             source +
             "&apiKey=5ebdd2c815384793a582b2071f9a746c"
