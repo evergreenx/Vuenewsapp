@@ -1,9 +1,9 @@
 # watchit
 
 ## Demo 
-<!-- ![](https://github.com/evergreen2001/Watchit/blob/main/docs/watchit-img.png)
-![](https://github.com/evergreen2001/Watchit/blob/main/docs/watchit2.png)
-![](https://github.com/evergreen2001/Watchit/blob/main/docs/watchit3.png) -->
+![](https://github.com/evergreen2001/Vuenewsapp/blob/main/src/docs/newsappx%20(1).gif)
+![](https://github.com/evergreen2001/Vuenewsapp/blob/main/src/docs/newsit1.png)
+![](https://github.com/evergreen2001/Vuenewsapp/blob/main/src/docs/newsit2.png)
 
 
 ### Built With
