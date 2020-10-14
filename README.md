@@ -1,14 +1,18 @@
 # watchit
 
 ## Demo 
-![](https://github.com/evergreen2001/Vuenewsapp/blob/main/src/docs/newsappx%20(1).gif)
+![](https://github.com/evergreen2001/Vuenewsapp/blob/main/src/docs/gifs.gif)
+
+
 ![](https://github.com/evergreen2001/Vuenewsapp/blob/main/src/docs/newsit1.png)
+
+
 ![](https://github.com/evergreen2001/Vuenewsapp/blob/main/src/docs/newsit2.png)
 
 
 ### Built With
 
-* [VUetify](http://vuetifyjs.com/)
+* [Vuetify](http://vuetifyjs.com/)
 * [Vue 2](https://vuejs.org/)
 * [Vue Router](https://router.vuejs.org/)
 * [axios](https://www.npmjs.com/package/axios)
