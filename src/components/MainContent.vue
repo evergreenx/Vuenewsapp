@@ -32,7 +32,7 @@
             <v-btn
               small
               replace
-              color="red"
+              color="blue"
               v-bind:href="article.url"
               target="_blank"
               >Read More</v-btn
